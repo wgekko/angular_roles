@@ -1,0 +1,75 @@
+:host {
+  display: grid;
+  grid-template:
+    "graph1 graph1 list" 3fr
+    "graph2 graph3 list" 2fr
+    / 1.5fr 1.5fr 1fr;
+  height: 700px;
+  width: 100%;
+  padding: 0 var(--base-separation);
+  gap: var(--base-separation);
+
+  & > * {
+    border-radius: 8px;
+    background-color: #00bac0; // Cambio a un color más claro para un mejor contraste
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Agregar sombra para darle profundidad
+  }
+}
+
+div {
+  &:nth-child(1) {
+    grid-area: graph1;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  &:nth-child(2) {
+    grid-area: graph2;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  &:nth-child(3) {
+    grid-area: graph3;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  &:nth-child(4) {
+    grid-area: list;
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      color: #333;
+    }
+  }
+
+  // Estilos para el texto
+  h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #292828;
+    max-width: 80%;
+    margin-bottom: 1.5rem;
+  }
+}

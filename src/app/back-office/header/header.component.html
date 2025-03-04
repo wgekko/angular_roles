@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <a id="logo" routerLink="/dashboard">Oficina-Gestión</a>
+  <nav>
+    <a *akoShowForRoles="['compras', 'gerente']" routerLink="/compras">Pedidos</a>
+    <a *akoShowForRoles="['mercaderia', 'gerente']" routerLink="/mercaderia"
+      >Inventario</a
+    >
+    <a *akoShowForRoles="['contador', 'gerente']" routerLink="/contador"
+      >Contabilidad</a
+    >
+  </nav>
+  <span class="separator"></span>
+  <ako-user-selector
+    [users]="users"
+    [currentUser]="currentUser$ | async"
+    (userChanged)="loginAsUser($event)"
+  ></ako-user-selector>
+  <button (click)="logout()">
+    <img src="/assets/icons/logout.svg" alt="" />
+    Salir
+  </button>
+</div>
